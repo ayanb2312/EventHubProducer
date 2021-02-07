@@ -1,0 +1,30 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.ab.azure.eventhub'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    compile("com.microsoft.azure:azure-eventhubs-eph:2.5.0")
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.2'
+    
+    // https://mvnrepository.com/artifact/io.projectreactor/reactor-test
+    testCompile group: 'io.projectreactor', name: 'reactor-test', version: '3.4.2'
+    
+    
+
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
